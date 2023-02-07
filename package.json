@@ -35,5 +35,8 @@
     "@types/http-proxy": "^1.17.9",
     "@types/react-toastify": "^4.1.0",
     "@types/styled-components": "^5.1.26"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

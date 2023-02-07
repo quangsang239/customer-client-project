@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "antd/dist/reset.css";
 import type { AppProps } from "next/app";
 import { Roboto } from "@next/font/google";
 import { SWRConfig } from "swr";
@@ -8,7 +9,7 @@ import { ToastContainer } from "react-toastify";
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   style: ["normal"],
-  subsets: ["latin"],
+  subsets: ["vietnamese"],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
