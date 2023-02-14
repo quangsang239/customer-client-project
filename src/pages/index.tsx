@@ -1,6 +1,12 @@
+import Footer from "@/components/common/footer";
+import Header from "@/components/common/header";
 import HomePage from "@/components/layout/home-page/home-page";
 import Head from "next/head";
+import styled from "styled-components";
 
+const StyledMain = styled.main`
+  position: relative;
+`;
 export default function Home() {
   return (
     <>
@@ -10,9 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <StyledMain>
+        <Header />
         <HomePage />
-      </main>
+        <Footer />
+      </StyledMain>
     </>
   );
 }

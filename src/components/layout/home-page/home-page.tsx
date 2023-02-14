@@ -1,9 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 
-type Props = {};
-
-function HomePage({}: Props) {
-  return <div>HomePage</div>;
+const StyledHomeWrap = styled.div`
+  height: 100vh;
+`;
+function HomePage() {
+  return <StyledHomeWrap>HomePage</StyledHomeWrap>;
 }
 
 export default HomePage;
