@@ -1,6 +1,7 @@
 import httpProxy, { ProxyResCallback } from "http-proxy";
 import type { NextApiRequest, NextApiResponse } from "next";
 import Cookies from "cookies";
+import { URL_API_SERVER } from "@/config";
 
 const proxy = httpProxy.createProxyServer();
 export const config = {
@@ -58,7 +59,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     };
     proxy.once("proxyRes", handleLoginResponse);
     proxy.web(req, res, {
-      target: process.env.API_URL,
+      target: URL_API_SERVER,
       changeOrigin: true,
       selfHandleResponse: true,
     });

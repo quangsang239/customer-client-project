@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 const StyledMain = styled.main`
   position: relative;
+  z-index: 1;
 `;
 export default function Home() {
   return (

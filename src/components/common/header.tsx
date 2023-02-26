@@ -1,155 +1,162 @@
 import React from "react";
-import styled from "styled-components";
-import { Input, Space, Button, Avatar, Badge, Anchor } from "antd";
-import {
-  SearchOutlined,
-  UserOutlined,
-  ShoppingOutlined,
-  HeartFilled,
-} from "@ant-design/icons";
+import { styled } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
+import Badge from "@mui/material/Badge";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
+import Box from "@mui/material/Box";
 import Link from "next/link";
 
-const StyledHeader = styled.div`
+const StyledHeaderWrap = styled("div")`
   width: 100%;
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
+  background-color: white;
+  z-index: 10;
 `;
-const StyledHeaderFirst = styled.div`
-  width: 80%;
-  height: fit-content;
-  margin: 10px auto;
+const StyledAppBar = styled(AppBar)`
+  position: relative;
+  background-color: white;
+  padding-top: 10px;
+`;
+const StyledContainer = styled(Container)``;
+const StyledToolBar = styled(Toolbar)`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;
-
-const StyledHeaderLogo = styled.div`
-  user-select: none;
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
+const StyledTypographyLogo = styled(Typography)`
   text-shadow: 4px 5px 10px;
+  color: #00d5c3;
+  font-weight: 600;
+  font-size: 30px;
+`;
+const StyledTypographySubLogo = styled("span")`
+  color: black;
+  font-weight: 400;
+  font-size: 30px;
+`;
+const StyledSearchIconWrap = styled("div")`
+  background-color: #00d5c3;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0px;
+  width: 40px;
+`;
+const StyledSearch = styled("div")`
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  width: 400px;
+  overflow: hidden;
+  border: solid 2px #00d5c3;
+  :hover {
+    opacity: 0.8;
+  }
+`;
+const StyledInputBase = styled(InputBase)`
+  height: 100%;
+  padding: 0 10px;
+  color: black;
+  padding-left: 45px;
+  width: 100%;
+  font-size: 16px;
+`;
+const StyledAvatar = styled(Avatar)`
+  background-color: #00d5c3;
+`;
+const StyledBadge = styled(Badge)`
+  border-radius: 10px;
   :hover {
     cursor: pointer;
     opacity: 0.8;
   }
 `;
-const StyledHeaderTitle = styled.h1`
-  color: #00d5c3;
-  font-weight: 900;
-  font-size: 30px;
-`;
-const StyledSubHeaderTitle = styled.h1`
-  font-weight: 300;
-  font-size: 30px;
-`;
-const StyledHeaderSearch = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 350px;
-  border-radius: 5px;
-  height: 35px;
-  overflow: hidden;
-  border: 2px solid #00d5c3;
-`;
-const StyledInputSearch = styled(Input)`
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  border-radius: 0px;
-`;
-const StyledButtonSearch = styled(Button)`
-  height: calc(100% + 4px);
-  width: 40px;
-  transform: translate(1px, -1px);
-  background-color: #00d5c3;
-  :hover {
-    background-color: #00d5c3;
-    opacity: 0.7;
-  }
-  color: white;
-  font-size: 20px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0px;
-`;
-const StyledHeaderFeature = styled.div``;
-const StyledAvatarFeature = styled(Avatar)`
-  background-color: #00d5c3;
-`;
-
-const StyledMenuBar = styled.div`
+const StyledMenuBar = styled(Box)`
   width: 100%;
   height: 40px;
   background-color: #00d5c3;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-const StyledLink = styled(Link)`
+const StyledLinkNavigateMenu = styled(Link)`
+  font-size: 20px;
   text-decoration: none;
   color: white;
-  font-size: 18px;
-  margin: 0 10px;
+  padding: 0 10px;
+  :hover {
+    opacity: 0.8;
+  }
 `;
-const Header = () => {
+const HeaderMaterial = () => {
   return (
-    <StyledHeader>
-      <StyledHeaderFirst>
-        <StyledHeaderLogo>
-          <StyledHeaderTitle>PHSTek</StyledHeaderTitle>
-          <StyledSubHeaderTitle>Shop</StyledSubHeaderTitle>
-        </StyledHeaderLogo>
-        <StyledHeaderSearch>
-          <StyledInputSearch
-            size="large"
-            placeholder="Tìm kiếm sản phẩm"
-            allowClear={true}
-          />
-          <StyledButtonSearch>
-            <SearchOutlined />
-          </StyledButtonSearch>
-        </StyledHeaderSearch>
-        <StyledHeaderFeature>
-          <Space align="center" size={15}>
-            <StyledAvatarFeature
-              shape="square"
-              size={40}
-              icon={<UserOutlined />}
-            />
-            <Badge count={0} showZero>
-              <StyledAvatarFeature
-                shape="square"
-                size={40}
-                icon={<ShoppingOutlined />}
-                alt="Cart"
-              />
-            </Badge>
-            <StyledAvatarFeature
-              shape="square"
-              size={40}
-              icon={<HeartFilled />}
-            />
-          </Space>
-        </StyledHeaderFeature>
-      </StyledHeaderFirst>
-      <StyledMenuBar>
-        <StyledLink href="#">Điện thoại</StyledLink>
-        <StyledLink href="#">Laptop</StyledLink>
-        <StyledLink href="#">MacBook</StyledLink>
-        <StyledLink href="#">IPhone</StyledLink>
-        <StyledLink href="#">Phụ Kiện</StyledLink>
-        <StyledLink href="#">Hàng cũ</StyledLink>
-        <StyledLink href="#">Gia Dụng</StyledLink>
-      </StyledMenuBar>
-    </StyledHeader>
+    <StyledHeaderWrap>
+      <StyledAppBar>
+        <StyledContainer>
+          <StyledToolBar>
+            <StyledTypographyLogo>
+              PHSTek<StyledTypographySubLogo>Shop</StyledTypographySubLogo>
+            </StyledTypographyLogo>
+            <StyledSearch>
+              <StyledSearchIconWrap>
+                <SearchIcon sx={{ fontSize: "30px", textAlign: "center" }} />
+              </StyledSearchIconWrap>
+              <StyledInputBase placeholder="Tìm kiếm sản phẩm ..." />
+            </StyledSearch>
+            <Stack direction="row" spacing={2}>
+              <StyledBadge max={99} badgeContent={10} color="warning">
+                <StyledAvatar variant="rounded">
+                  <PersonOutlineOutlinedIcon
+                    sx={{ fontSize: "25px", fontWeight: 100 }}
+                  />
+                </StyledAvatar>
+              </StyledBadge>
+              <StyledBadge max={99} badgeContent={10} color="warning">
+                <StyledAvatar variant="rounded">
+                  <ShoppingBagOutlinedIcon
+                    sx={{ fontSize: "25px", fontWeight: 100 }}
+                  />
+                </StyledAvatar>
+              </StyledBadge>
+              <StyledBadge max={99} badgeContent={10} color="warning">
+                <StyledAvatar variant="rounded">
+                  <FavoriteOutlinedIcon
+                    sx={{ fontSize: "25px", fontWeight: 100 }}
+                  />
+                </StyledAvatar>
+              </StyledBadge>
+            </Stack>
+          </StyledToolBar>
+        </StyledContainer>
+        <StyledMenuBar>
+          <StyledLinkNavigateMenu href="#">Điện thoại</StyledLinkNavigateMenu>
+          <StyledLinkNavigateMenu href="#">Laptop</StyledLinkNavigateMenu>
+          <StyledLinkNavigateMenu href="#">Điện thoại</StyledLinkNavigateMenu>
+          <StyledLinkNavigateMenu href="#">Iphone</StyledLinkNavigateMenu>
+          <StyledLinkNavigateMenu href="#">Macbook</StyledLinkNavigateMenu>
+          <StyledLinkNavigateMenu href="#">Phụ kiện</StyledLinkNavigateMenu>
+          <StyledLinkNavigateMenu href="#">Hàng cũ</StyledLinkNavigateMenu>
+          <StyledLinkNavigateMenu href="#">Gia dụng</StyledLinkNavigateMenu>
+        </StyledMenuBar>
+      </StyledAppBar>
+    </StyledHeaderWrap>
   );
 };
 
-export default Header;
+export default HeaderMaterial;

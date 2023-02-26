@@ -1,11 +1,24 @@
 import React from "react";
-import styled from "styled-components";
+import SliderBar from "./slider-bar";
+import MobileSection from "./mobile-section";
+import { styled } from "@mui/material/styles";
 
-const StyledHomeWrap = styled.div`
-  height: 100vh;
+const StyledHomePageWrap = styled("div")`
+  position: relative;
+  z-index: 1;
+  background-color: #efefef;
+  padding-bottom: 10px;
 `;
+
 function HomePage() {
-  return <StyledHomeWrap>HomePage</StyledHomeWrap>;
+  return (
+    <StyledHomePageWrap>
+      <SliderBar></SliderBar>
+      <MobileSection></MobileSection>
+      <MobileSection></MobileSection>
+      <MobileSection></MobileSection>
+    </StyledHomePageWrap>
+  );
 }
 
 export default HomePage;

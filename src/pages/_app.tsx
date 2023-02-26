@@ -1,5 +1,8 @@
 import "@/styles/globals.css";
 import "antd/dist/reset.css";
+import "@/styles/main.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import type { AppProps } from "next/app";
 import { Roboto } from "@next/font/google";
 import { SWRConfig } from "swr";

@@ -10,8 +10,7 @@ import {
 const StyledFooterWrap = styled.div`
   width: 100%;
   position: relative;
-  bottom: 0;
-  background-color: #f9f9f9;
+  background-color: #e5e5e5;
   padding: 10px 0;
 `;
 const StyledFooterContent = styled.div`
@@ -23,7 +22,7 @@ const StyledFooterContent = styled.div`
 const StyledContactUs = styled.div`
   width: 40%;
   text-align: centers;
-  color: #5f5f5f;
+  color: #555;
 `;
 const StyledHeaderLogo = styled.div`
   user-select: none;

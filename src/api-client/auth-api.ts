@@ -6,4 +6,7 @@ export const authApi = {
   login(payload: LoginPayload) {
     return axiosClient.post("/login", payload);
   },
+  getAllProduct() {
+    return axiosClient.get("/product/client-list");
+  },
 };
