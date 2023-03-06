@@ -1,6 +1,6 @@
 import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
-import HomePage from "@/components/layout/home-page/home-page";
+import HomePage from "@/components/layout/home-page";
 import Head from "next/head";
 import styled from "styled-components";
 

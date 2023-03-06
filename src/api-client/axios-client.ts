@@ -1,8 +1,10 @@
 import axios from "axios";
+import { URL_API_SERVER } from "@/config";
 
 export type AxiosRequestHeaders = Record<string, string>;
+
 const axiosClient = axios.create({
-  baseURL: "/api",
+  baseURL: `${URL_API_SERVER}`,
   headers: {
     "Content-Type": "application/json",
   },
@@ -11,7 +13,8 @@ const axiosClient = axios.create({
 axiosClient.interceptors.request.use(
   async function (config) {
     // Do something before request is sent
-
+    const token = localStorage.getItem("token");
+    config.headers.Authorization = token ? `Bearer ${JSON.parse(token)}` : "";
     return config;
   },
   function (error) {

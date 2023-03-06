@@ -104,7 +104,7 @@ const StyledLinkNavigateMenu = styled(Link)`
     opacity: 0.8;
   }
 `;
-const HeaderMaterial = () => {
+const Header = () => {
   return (
     <StyledHeaderWrap>
       <StyledAppBar>
@@ -159,4 +159,4 @@ const HeaderMaterial = () => {
   );
 };
 
-export default HeaderMaterial;
+export default Header;

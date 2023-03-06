@@ -1,7 +1,8 @@
 import React from "react";
 import SliderBar from "./slider-bar";
-import MobileSection from "./mobile-section";
+import PhoneSection from "./phone-section";
 import { styled } from "@mui/material/styles";
+import LaptopSection from "./laptop-section";
 
 const StyledHomePageWrap = styled("div")`
   position: relative;
@@ -13,10 +14,9 @@ const StyledHomePageWrap = styled("div")`
 function HomePage() {
   return (
     <StyledHomePageWrap>
-      <SliderBar></SliderBar>
-      <MobileSection></MobileSection>
-      <MobileSection></MobileSection>
-      <MobileSection></MobileSection>
+      <SliderBar />
+      <PhoneSection />
+      <LaptopSection />
     </StyledHomePageWrap>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import Slider from "react-slick";
@@ -12,7 +12,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
 
-const StyledMobileSectionWrap = styled("div")`
+import { productApi } from "@/api-client";
+
+const StyledPhoneSectionWrap = styled("div")`
   position: relative;
   width: 90%;
   margin: 20px auto;
@@ -107,9 +109,9 @@ const StyledCardAction = styled(CardActions)`
   justify-content: space-between;
   align-items: center;
 `;
-function MobileSection() {
+function PhoneSection() {
   return (
-    <StyledMobileSectionWrap>
+    <StyledPhoneSectionWrap>
       <StyledPriceTitle variant="h5">KHUYẾN MÃI HOT</StyledPriceTitle>
       <StyledSliderWrap
         infinite={true}
@@ -345,8 +347,8 @@ function MobileSection() {
           </StyledCardAction>
         </StyledCard>
       </StyledSliderWrap>
-    </StyledMobileSectionWrap>
+    </StyledPhoneSectionWrap>
   );
 }
 
-export default MobileSection;
+export default PhoneSection;
